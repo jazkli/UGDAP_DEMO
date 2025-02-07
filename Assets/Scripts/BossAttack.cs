@@ -38,7 +38,7 @@ public class Boss : MonoBehaviour
             AttackPattern();
             timer = 0f;
         }
-        RotateTowardsPlayer();
+        RotateTowardsPlayer();//ÃæÏòÍæ¼Ò
     }
 
     void AttackPattern()
