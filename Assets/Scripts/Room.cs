@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Room : MonoBehaviour {
     
-    private EventHandler OnPlayerEnterRoom;
-    private EventHandler OnPlayerExitRoom;
+    public EventHandler OnPlayerEnterRoom;
+    public EventHandler OnPlayerExitRoom;
     
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.TryGetComponent(out UPlayerController player)) {
