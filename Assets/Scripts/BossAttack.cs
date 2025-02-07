@@ -21,17 +21,23 @@ public class Boss : MonoBehaviour
     public Transform player;
     void Start()
     {
-        
+       // player = GameInstance.GetSingleton().GetPlayer().transform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+            player = GameInstance.GetSingleton().GetPlayer()?.transform; // 防止 BOSS 在 Start() 时找不到玩家
+            return;
+        }
         if (timeBtwDamage > 0)
         {
             timeBtwDamage -= Time.deltaTime;
         }
-        HPbar.value = health;
+        //HPbar.value = health;
         timer += Time.deltaTime;
         if (timer >= fireRate)
         {
