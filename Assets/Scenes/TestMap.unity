@@ -197,30 +197,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17604495}
   m_CullTransparentMesh: 1
---- !u!1 &202650282 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2927606019288947161, guid: d0990a2d400045447a91c731f1c36194, type: 3}
-  m_PrefabInstance: {fileID: 316444152}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &202650286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6414715967683159518, guid: d0990a2d400045447a91c731f1c36194, type: 3}
   m_PrefabInstance: {fileID: 316444152}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &202650287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202650282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d478e83e1ff6b2841901ce5790df4ed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileGameObject: {fileID: 0}
-  scatterAngle: 40
 --- !u!1 &234771694
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,10 +293,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2927606019288947161, guid: d0990a2d400045447a91c731f1c36194, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 202650287}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0990a2d400045447a91c731f1c36194, type: 3}
 --- !u!1 &694483092
 GameObject:
@@ -595,6 +573,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5333019590353822223, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
+      propertyPath: HPbar
+      value: 
+      objectReference: {fileID: 1134744080}
+    - target: {fileID: 5333019590353822223, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 202650286}
+    - target: {fileID: 5333019590353822223, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6020626839844619253, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
       propertyPath: m_Mass
       value: 0.7853982
@@ -703,6 +693,11 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &1498508021 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6233525135570859675, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
+  m_PrefabInstance: {fileID: 930260510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1694194023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3305585175947593191, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
@@ -775,7 +770,7 @@ MonoBehaviour:
   damage: 0
   HPbar: {fileID: 1134744080}
   bulletPrefab: {fileID: 7622812600705816164, guid: 34da4a95ff97b984b8ddf6e7f79f8d8b, type: 3}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 1498508021}
   fireRate: 1
   health: 100
   player: {fileID: 202650286}
