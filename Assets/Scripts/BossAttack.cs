@@ -14,7 +14,7 @@ public class Boss : MonoBehaviour
     public Slider HPbar;
     public GameObject bulletPrefab; // 子弹预制体
     public Transform firePoint; // 发射点
-    public float fireRate = 1f; // 射击间隔
+    public float fireRate = 5f; // 射击间隔
     public int health = 100; // BOSS生命值
     private float timer = 0f;
     private int phase = 1; // BOSS阶段
@@ -38,6 +38,7 @@ public class Boss : MonoBehaviour
             AttackPattern();
             timer = 0f;
         }
+        RotateTowardsPlayer();//面向玩家
     }
 
     void AttackPattern()
@@ -99,5 +100,15 @@ public class Boss : MonoBehaviour
         if (health <= 30) phase = 3;
         if (health <= 0) Destroy(gameObject); // BOSS死亡
     }
+    void RotateTowardsPlayer()
+    {
+        if (player)
+        {
+            Vector2 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+    }
+
 }
-   
+
