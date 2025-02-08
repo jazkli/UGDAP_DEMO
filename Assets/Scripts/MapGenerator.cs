@@ -5,6 +5,8 @@ using Random = UnityEngine.Random;
 
 public class MapGenerator : MonoBehaviour {
 
+    public EventHandler OnGenerateMap;
+    
     [SerializeField] private List<RoomSO> RoomSos;
     [SerializeField] private int bossCount = 3;
     [SerializeField] private int RoomWidth = 17;
@@ -22,6 +24,9 @@ public class MapGenerator : MonoBehaviour {
     private List<int> path = new List<int>();
     private int[] preNodeMatrix = new int[RowCount * ColumnCount];
     private int[,] connectionMatrix = new int[RowCount, ColumnCount];
+    
+    public List<Room> rooms;
+    public Room startRoom, endRoom;
     
     // Start is called before the first frame update
     void Start() {
@@ -44,7 +49,7 @@ public class MapGenerator : MonoBehaviour {
         
     }
 
-    private void GenerateMap() {
+    public void GenerateMap() {
         // 生成起始点
         do {
             startRoomIndex = Random.Range(0, RowCount * ColumnCount);
@@ -60,6 +65,7 @@ public class MapGenerator : MonoBehaviour {
         GenerateRoomType();
         // 生成障碍物
         // GenerateObstacle();
+        OnGenerateMap?.Invoke(this, EventArgs.Empty);
     }
 
     private void GeneratePath() {
@@ -118,8 +124,17 @@ public class MapGenerator : MonoBehaviour {
             String mess = "";
             for (int j = 0; j < ColumnCount; ++j) {
                 mess = mess + connectionMatrix[i, j] + " ";
-                Instantiate(RoomType2Room[connectionMatrix[i, j]].RoomPrefab, 
-                    new Vector2(j * RoomWidth, -i * RoomHeight), Quaternion.identity);
+                Room room = Instantiate(RoomType2Room[connectionMatrix[i, j]].RoomPrefab, 
+                    new Vector2(j * RoomWidth, -i * RoomHeight), Quaternion.identity).GetComponent<Room>();
+                rooms.Add(room);
+
+                int roomIndex = GetRoomIndexByXY(i, j); 
+                if (roomIndex == startRoomIndex) {
+                    startRoom = room;
+                } else if (roomIndex == endRoomIndex) {
+                    endRoom = room;
+                }
+                
             }
 
             Debug.Log(mess);
