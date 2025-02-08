@@ -16,10 +16,8 @@ public class GameInstance : MonoBehaviour {
     private void Start() {
 
         if (Singleton == null) {
-            Singleton = this;
+            Singleton = this;//ʵ�ֵ���
         }
-        
-        
         
         MapGenerator.OnGenerateMap += OnGenerateMap;
         
@@ -37,7 +35,7 @@ public class GameInstance : MonoBehaviour {
     }
 
     public GameObject GetLight() {
-        return light;
+        return roomlight;
     }
     
     public static GameInstance GetSingleton() {

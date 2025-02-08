@@ -22,7 +22,7 @@ public class ScatterAttackComponent : AbstractAttackComponent
         float radians = newAngle * Mathf.Deg2Rad;
 
         // 计算对应的Vector2
-        Vector2 direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+        Vector2 direction = new (Mathf.Cos(radians), Mathf.Sin(radians));
 
         // 返回指定长度的向量
         return direction.normalized;
