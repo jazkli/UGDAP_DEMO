@@ -527,7 +527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9399a55fdbfca949b85f0eea514175e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData: {fileID: 11400000, guid: 6242ad6e964c0094e948bd1cc4b83210, type: 2}
 --- !u!114 &326281848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,7 +968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9399a55fdbfca949b85f0eea514175e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData: {fileID: 11400000, guid: a360a1c0aa8d13c469bd9dc402f6c31f, type: 2}
 --- !u!114 &854865861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,7 +1101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9399a55fdbfca949b85f0eea514175e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData: {fileID: 11400000, guid: a26540743030b084bb90249f4245f2fb, type: 2}
 --- !u!114 &923661404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,7 +1418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9399a55fdbfca949b85f0eea514175e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData: {fileID: 11400000, guid: fb1874383aef4e2459ef3bc33316ecdc, type: 2}
 --- !u!114 &1248465248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2019,7 +2015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9399a55fdbfca949b85f0eea514175e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData: {fileID: 11400000, guid: 2e8d7a5128af72c4684f09e86c194fde, type: 2}
 --- !u!114 &1778627324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,7 +2148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9399a55fdbfca949b85f0eea514175e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData: {fileID: 11400000, guid: 8faf6e9700182dd4491f759a0c3f7e2d, type: 2}
 --- !u!114 &1822723281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2428,30 +2422,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2143510842}
-  - component: {fileID: 2143510841}
   m_Layer: 0
-  m_Name: skillmanager
+  m_Name: SkillManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2143510841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143510840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce61477485e5c7d42a75a309b174e16b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeSkill: {fileID: 0}
-  skillImage: {fileID: 264598480}
-  skillNameText: {fileID: 1719383141}
-  skillDesText: {fileID: 1725361450}
 --- !u!4 &2143510842
 Transform:
   m_ObjectHideFlags: 0
