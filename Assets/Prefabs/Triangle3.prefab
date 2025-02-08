@@ -103,7 +103,7 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 3
   minDistance: 0
-  projectilePrefab: {fileID: 6085540865177409072, guid: ad8f4230f93a08e4490207be9315f2ea, type: 3}
+  projectilePrefab: {fileID: 1168678920769000834, guid: bb1c85b5ba0379245a42d7d57a262e31, type: 3}
   fireRate: 1
   firePoints:
   - {fileID: 2018554547022488419}

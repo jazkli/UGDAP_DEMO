@@ -103,13 +103,14 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 3
   minDistance: 0
-  projectilePrefab: {fileID: 6085540865177409072, guid: ad8f4230f93a08e4490207be9315f2ea, type: 3}
+  projectilePrefab: {fileID: 1168678920769000834, guid: bb1c85b5ba0379245a42d7d57a262e31, type: 3}
   fireRate: 1
   firePoints:
-  - {fileID: 6414715967683159518, guid: d0990a2d400045447a91c731f1c36194, type: 3}
+  - {fileID: 1723817281503078057}
   playerTarget: {fileID: 6414715967683159518, guid: d0990a2d400045447a91c731f1c36194, type: 3}
   nextFireTime: 0
   splitPrefabs:
+  - {fileID: 5313406103667334534, guid: 13c449310cbfecb48bf5e57540a46282, type: 3}
   - {fileID: 5313406103667334534, guid: 13c449310cbfecb48bf5e57540a46282, type: 3}
   - {fileID: 5313406103667334534, guid: 13c449310cbfecb48bf5e57540a46282, type: 3}
   splitRadius: 2
@@ -173,7 +174,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600837361975227504}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
