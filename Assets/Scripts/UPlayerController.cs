@@ -13,13 +13,8 @@ public class UPlayerController : MonoBehaviour {
 
     private List<Room> rooms;
     private Room currentRoom;
-    private Camera camera;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private  Camera maincamera;
+
     
     [SerializeField]
     private float moveSpeed = 5f;
@@ -32,16 +27,16 @@ public class UPlayerController : MonoBehaviour {
         float moveY = Input.GetAxis("Vertical");   // 上下移动
 
         // 计算移动向量
-        Vector2 movement = new Vector2(moveX, moveY);
+        Vector2 movement = new (moveX, moveY);
 
         // 移动对象
-        transform.Translate(movement * moveSpeed * Time.deltaTime);
+        transform.Translate(moveSpeed * Time.deltaTime * movement);
 
         if (Input.GetKey(KeyCode.Mouse0)) {
             fireTimer += 10 * Time.deltaTime;
             if (fireTimer >= fireDeltaTime) {
                 fireTimer = 0f;
-                Vector3 pressPosition = camera.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 pressPosition = maincamera.ScreenToWorldPoint(Input.mousePosition);
                 pressPosition.z = 0f;
                 Vector3 fireDirection = (pressPosition - transform.position).normalized;
                 attackComponentGameObject.GetComponent<AbstractAttackComponent>().Attack(transform.position, fireDirection);
@@ -58,8 +53,8 @@ public class UPlayerController : MonoBehaviour {
         }
     }
 
-    public void SetUpCamera(Camera camera) {
-        this.camera = camera;
+    public void SetUpCamera(Camera maincamera) {
+        this.maincamera = maincamera;
     }
 
     private void OnPlayerEnterRoom(object sender, EventArgs e) {
@@ -69,13 +64,13 @@ public class UPlayerController : MonoBehaviour {
             Vector2 newRoomPosition = newRoom.transform.position;
             currentRoom = newRoom;
             if (newRoomPosition.x > currentRoomPosition.x) {
-                camera.transform.position += new Vector3(16, 0, 0);
+                maincamera.transform.position += new Vector3(16, 0, 0);
             } else if (newRoomPosition.x < currentRoomPosition.x) {
-                camera.transform.position += new Vector3(-16, 0, 0);
+                maincamera.transform.position += new Vector3(-16, 0, 0);
             } else if (newRoomPosition.y > currentRoomPosition.y) {
-                camera.transform.position += new Vector3(0, 10, 0);
+                maincamera.transform.position += new Vector3(0, 10, 0);
             } else {
-                camera.transform.position += new Vector3(0, -10, 0);
+                maincamera.transform.position += new Vector3(0, -10, 0);
             }
             GameInstance.GetSingleton().GetLight().transform.position = currentRoom.transform.position;
         }
