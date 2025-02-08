@@ -51,7 +51,6 @@ public class UPlayerController : MonoBehaviour {
 
     public void SetUpRooms(List<Room> rooms) {
         this.rooms = rooms;
-        currentRoom = rooms[0];
         foreach (Room room in rooms) {
             room.OnPlayerExitRoom += OnPlayerExitRoom; 
             room.OnPlayerEnterRoom += OnPlayerEnterRoom;
@@ -64,10 +63,9 @@ public class UPlayerController : MonoBehaviour {
 
     private void OnPlayerEnterRoom(object sender, EventArgs e) {
         Room newRoom = sender as Room;
-        if (newRoom != currentRoom) {
+        if (newRoom != currentRoom && currentRoom != null) {
             Vector2 currentRoomPosition = currentRoom.transform.position;
             Vector2 newRoomPosition = newRoom.transform.position;
-            currentRoom = newRoom;
             if (newRoomPosition.x > currentRoomPosition.x) {
                 camera.transform.position += new Vector3(17, 0, 0);
             } else if (newRoomPosition.x < currentRoomPosition.x) {
@@ -79,6 +77,8 @@ public class UPlayerController : MonoBehaviour {
             }
             GameInstance.GetSingleton().GetLight().transform.position = currentRoom.transform.position;
         }
+        
+        currentRoom = newRoom;
     }
 
     private void OnPlayerExitRoom(object sender, EventArgs e) {
