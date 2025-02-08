@@ -69,9 +69,9 @@ public class UPlayerController : MonoBehaviour {
             Vector2 newRoomPosition = newRoom.transform.position;
             currentRoom = newRoom;
             if (newRoomPosition.x > currentRoomPosition.x) {
-                camera.transform.position += new Vector3(16, 0, 0);
+                camera.transform.position += new Vector3(17, 0, 0);
             } else if (newRoomPosition.x < currentRoomPosition.x) {
-                camera.transform.position += new Vector3(-16, 0, 0);
+                camera.transform.position += new Vector3(-17, 0, 0);
             } else if (newRoomPosition.y > currentRoomPosition.y) {
                 camera.transform.position += new Vector3(0, 10, 0);
             } else {

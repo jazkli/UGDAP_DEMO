@@ -573,18 +573,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5333019590353822223, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
-      propertyPath: HPbar
-      value: 
-      objectReference: {fileID: 1134744080}
-    - target: {fileID: 5333019590353822223, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 202650286}
-    - target: {fileID: 5333019590353822223, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
-      propertyPath: fireRate
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6020626839844619253, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
       propertyPath: m_Mass
       value: 0.7853982
@@ -693,11 +681,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!4 &1498508021 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6233525135570859675, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
-  m_PrefabInstance: {fileID: 930260510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1694194023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3305585175947593191, guid: 47d04d50e7f9ada4d9a83357eb030c5a, type: 3}
@@ -770,7 +753,7 @@ MonoBehaviour:
   damage: 0
   HPbar: {fileID: 1134744080}
   bulletPrefab: {fileID: 7622812600705816164, guid: 34da4a95ff97b984b8ddf6e7f79f8d8b, type: 3}
-  firePoint: {fileID: 1498508021}
+  firePoint: {fileID: 0}
   fireRate: 1
   health: 100
   player: {fileID: 202650286}

@@ -32,9 +32,5 @@ public class GameInstance : MonoBehaviour {
     public static GameInstance GetSingleton() {
         return Singleton;
     }
-    public GameObject GetPlayer()
-    {
-        return playerPrefab;
-    }
-
+    
 }
