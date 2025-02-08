@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameInstance : MonoBehaviour {
 
-    [SerializeField] private new GameObject light;
-    [SerializeField] private new Camera camera;
+    [SerializeField] private GameObject light;
+    [SerializeField] private Camera camera;
     [SerializeField] private List<Room> rooms;
     [SerializeField] private GameObject playerPrefab;
 
@@ -22,7 +22,7 @@ public class GameInstance : MonoBehaviour {
         player = Instantiate(playerPrefab, new Vector2(0, 0), Quaternion.identity).GetComponent<UPlayerController>();
         player.SetUpRooms(rooms);
         player.SetUpCamera(camera);
- 
+
     }
 
     public GameObject GetLight() {

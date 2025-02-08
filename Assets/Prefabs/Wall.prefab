@@ -172,5 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 5364744400423789657}
-  colorResponseSpeed: 20
-  fadeColorDeltaTime: 0.8
+  colorResponseSpeed: 10
